@@ -1,0 +1,44 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.header{
+    @include m.bgImage('../assets/header.jpg', rgba(57, 70, 89, .7));
+    padding: 5rem 0;
+
+    &__logo{
+        margin: 0 auto;
+        max-width: 20rem;
+
+        @include m.tablet{
+            margin: 0;
+        }
+    }
+
+    &__contenido{
+        padding: 10rem 0;
+
+        @include m.desktop{
+            padding: 15rem 0;
+        }
+    }
+
+    &__heading{
+        color: v.$blanco;
+        margin: 0 0 2rem 0;
+        font-size: 4.5rem;
+        text-wrap: pretty;
+
+        @include m.tablet{
+            font-size: 6rem;
+            max-width: 50%;
+        }
+
+        @include m.desktop{
+            max-width: 40%;
+        }
+    }
+
+    &__boton{
+        @include m.boton(v.$primario, v.$secundario)
+    }
+}
