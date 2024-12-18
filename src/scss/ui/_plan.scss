@@ -1,0 +1,72 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.plan{
+    background-color: v.$blanco;
+    padding: 4rem;
+    position: relative;
+
+    &:nth-child(1),
+    &:nth-child(3){
+        order: 2;
+
+        @include m.tablet {
+            order: 0;
+        }
+    }
+    &:nth-child(2){
+        background-color: v.$primario;
+        order: 1;
+
+        @include m.tablet {
+            position: relative;
+            z-index: 100;
+            border-radius: 2rem;
+            order: 0;
+            margin-top: -5rem;
+            margin-bottom: -5rem;
+            padding-top: 9rem;
+        }
+    }
+
+
+    text-align: center;
+
+    &__icono{
+        margin: 0 auto;
+        max-width: 9rem;
+        margin-bottom: 4rem;
+    }
+
+    &__texto{
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+    }
+
+    &__item{
+        margin-bottom: 2rem;
+    }
+
+
+    &__boton{
+        @include m.boton(v.$primario, v.$secundario);
+        margin-top: 2rem;
+        outline: 2px solid white;
+        border-radius: 1rem;
+    }
+
+    .boton--inicio{
+        outline: 2px solid v.$blanco;
+    }
+
+
+    transition: transform .3s ease;
+
+    @include m.tablet {
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    
+}

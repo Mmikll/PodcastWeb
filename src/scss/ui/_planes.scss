@@ -1,0 +1,41 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.planes{
+    background-color: v.$secundario;
+
+    &__heading{
+        color: v.$blanco;
+        display: inline-block;
+        font-size: 3.6rem;
+        margin-top: 5rem;
+
+        &::after{
+            content: '';
+            display: block;
+            width: calc(100% + 1rem);
+            height: 1rem;
+            background-color: v.$primario;
+            margin-top: -1.4rem;
+        }
+
+        @include m.tablet{
+            margin-top: 0;
+        }
+    }
+
+    &__texto{
+        color: v.$blanco;
+    }
+
+    &__flex{
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet {
+            flex-direction: row;
+            max-width: 80rem;
+            margin: 10rem auto 0 auto;
+        }
+    }
+}

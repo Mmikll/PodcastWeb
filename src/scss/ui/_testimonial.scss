@@ -1,0 +1,50 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.testimonial{
+
+    background-color: v.$primario;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border: 5px solid v.$secundario;
+    border-radius: 1rem;
+
+
+    &__texto{
+        padding: 0 0 0 6rem;
+        position: relative;
+        p{
+            margin: 0;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            background-image: url('../assets/comilla.svg');
+            background-repeat: no-repeat;
+            width: 5rem;
+            height: 5rem;
+            left: 0;
+            top: 1rem;
+        }
+    }
+
+    @include m.tablet {
+        max-width: 70%;
+
+        &:nth-child(2){
+            margin-left: 10%;
+        }
+
+        &:nth-child(3){
+            margin-left: 20%;
+        }
+
+        &:last-child{
+            margin-left: 30%;
+        }
+    }
+
+
+}
